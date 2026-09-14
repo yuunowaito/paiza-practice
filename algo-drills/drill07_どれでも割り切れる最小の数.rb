@@ -1,0 +1,1 @@
+puts [3, 4, 5].reduce(1) { |a, b| a.lcm(b) }
