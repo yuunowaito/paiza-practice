@@ -1,9 +1,9 @@
 n = gets.chomp.to_i
-b = []
-n.times do
-  a = gets.chomp.to_i
-    b << a
+a = gets.split.map(&:to_i)
+
+count = 0
+a.combination(2).each do |x, y|
+  count += 1 if (x + y) % 2 == 0
 end
-c = Hash.new(0)
-b.each{ |x| c[x] += 1 }
-puts c.values.count {|v| v >= 2}
+
+puts count
